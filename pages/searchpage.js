@@ -13,6 +13,7 @@ class SearchPage {
   async searchforiphone(){
     await this.page.locator(this.searchinput).fill('i Phone 16 Pro Max');
     await this.page.locator(this.searchbutton);
+    console.log('Search for iphone')
   }
 
 
