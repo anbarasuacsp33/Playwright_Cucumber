@@ -1,0 +1,18 @@
+{
+  "name": "workshop_06022026_02",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.6.0",
+    "@playwright/test": "^1.58.1",
+    "chai": "^6.2.2",
+    "playwright": "^1.58.1"
+  }
+}
