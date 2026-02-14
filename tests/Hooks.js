@@ -1,43 +1,39 @@
-const { Before, After } = require('@cucumber/cucumber');
-const { chromium } = require('playwright');
+const { BeforeAll, AfterAll, Before, After } = require('@cucumber/cucumber');
+const { chromium, firefox, webkit } = require('playwright');
 
+let browser;
 
+function getBrowser(browserName) {
+    switch (browserName) {
+        case 'firefox':
+            return firefox;
+        case 'webkit':
+            return webkit;
+        default:
+            return chromium;
+    }
+}
 
+BeforeAll(async function () {
+    const browserName = process.env.BROWSER || 'chromium';
+    const browserType = getBrowser(browserName);
 
-Before(async function () {
+    console.log("Launching browser:", browserName);
 
-  this.browser = await chromium.launch({ headless: false });
-  this.context = await this.browser.newContext();
-  this.page = await this.context.newPage();
-
-  //   this.browser = await chromium.launch({
-  //   headless: false,
-  //   args: ['--start-maximized'] // maximize window
-  // });
-
-  // this.context = await this.browser.newContext({
-  //   viewport: null // let page use full window size
-  // });
-
-  // this.page = await this.context.newPage();
-
+    browser = await browserType.launch({
+        headless: false
+    });
 });
 
-
-
-
-
-
-
+Before(async function () {
+    this.context = await browser.newContext();
+    this.page = await this.context.newPage();
+});
 
 After(async function () {
-  if (this.page && !this.page.isClosed()) {
-    await this.page.close();
-  }
-  if (this.context) {
     await this.context.close();
-  }
-  if (this.browser) {
-    await this.browser.close();
-  }
+});
+
+AfterAll(async function () {
+    await browser.close();
 });

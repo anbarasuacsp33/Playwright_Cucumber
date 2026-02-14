@@ -5,6 +5,7 @@ module.exports = defineConfig({
     headless: false,
     browserName: 'chromium',
     screenshot: 'only-on-failure',
-    video: 'retain-on-failure'
+    video: 'retain-on-failure',
+    actionTimeout: 10000,
   }
 });

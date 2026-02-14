@@ -6,7 +6,10 @@
   "scripts": {
     "test": "cucumber-js",
     "allure:generate": "allure generate allure-results --clean -o allure-report",
-    "allure:open": "allure open allure-report"
+    "allure:open": "allure open allure-report",
+    "test:chromium": "set BROWSER=chromium && npx cucumber-js --parallel 2",
+    "test:firefox": "cross-env BROWSER=firefox npx cucumber-js --parallel 2",
+    "test:all": "concurrently \"npm run test:chromium\" \"npm run test:firefox\""
   },
   "keywords": [],
   "author": "",
@@ -19,12 +22,15 @@
     "allure-cucumberjs": "^3.4.5",
     "allure-playwright": "^3.4.5",
     "chai": "^6.2.2",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
     "playwright": "^1.58.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
   "dependencies": {
     "commons": "^0.0.1-pre",
-    "xlsx": "^0.18.5"
+    "exceljs": "^4.4.0",
+    "multiple-cucumber-html-reporter": "^3.10.0"
   }
 }
