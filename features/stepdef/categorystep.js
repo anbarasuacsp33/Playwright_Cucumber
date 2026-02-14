@@ -3,11 +3,9 @@ const {Category} = require("../../pages/Categorypage")
 
 
 
-
 When('User Click Category Drop Down', async function () {
     this.category = new Category(this.page)
     await this.category.clickcategory();
-
 });
 
 
