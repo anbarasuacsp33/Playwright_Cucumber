@@ -13,4 +13,3 @@ Feature: Home Page
         Given I am on ebay home page
         When User Scroll Down to the Footer
         Then Home Page Footer Menu Verified
-

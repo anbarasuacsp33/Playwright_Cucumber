@@ -3,8 +3,7 @@ class Category{
 
     constructor(page){
         this.page=page;
-        this.catdd='.gh-search-categories'
-
+        this.catdd='.gh-search-categories';
     }
 
     async clickcategory(){
@@ -12,7 +11,6 @@ class Category{
     }
 
 
-
-
 }
+
 module.exports = {Category}

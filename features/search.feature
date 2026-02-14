@@ -22,6 +22,22 @@ Feature: Search Feature
        | iphone   |
        | %&^FJJ*& |
        | moto     |
+  
+  @Search-multi
+   Scenario: multi window handling by click first product fromebay search result
+    Given I am on ebay home page
+    When Search a Product "<Product>"
+    And Click first product from the search result
+    Then Product detail page verified
+    Examples:
+       | Product  |
+       | iphone   |
+       | moto     |
+  
+  
+  
+
+
        
 
 
