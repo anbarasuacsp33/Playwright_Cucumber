@@ -1,13 +1,16 @@
 import { Given, When, Then } from '@cucumber/cucumber';
 import { expect } from '@playwright/test';
+import search1 from '../../pages/search1Page.js'
 
 Given('User in ebay home page', async function () {
-    await this.page.goto("https://www.ebay.com")
+    this.sp = new search1(this.page);
+    await this.sp.launchtheapplicationurl();
 });
 
 
 When('Enter product name in a search field', async function () {
-await this.page.locator("#gh-ac").fill("Laptop");
+    this.sp = new search1(this.page);
+    await this.sp.searchforproduct();
 });
        
 

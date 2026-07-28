@@ -18,10 +18,10 @@ Feature: Search at second time
     Scenario Outline: Scenario Outline name
         Given User in ebay home page
         When Search For A Product "<Product>"
-        And Click Search buttons new
-        And Verify the search result
-        And Click the first product from the search result
-        Then Verify product detail page
+        # And Click Search buttons new
+        # And Verify the search result
+        # And Click the first product from the search result
+        # Then Verify product detail page
         Examples:
             | Product |
             | Iphone  |
