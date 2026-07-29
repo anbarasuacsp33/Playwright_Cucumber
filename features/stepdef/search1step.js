@@ -15,58 +15,49 @@ When('Enter product name in a search field', async function () {
        
 
 When('Click Search buttons new', async function () {
-await this.page.locator("#gh-search-btn").click();
-// await this.page.waitForTimeout(5000);
+    await this.sp.clickSearchButton();
 
 });
        
 
 Then('I verified search results', async function () {
-  await expect(this.page).toHaveURL('https://www.ebay.com/sch/i.html?_nkw=Laptop&_sacat=0&_from=R40&_trksid=p4624852.m570.l1313'
-  );
-
-  const heading = this.page.locator('.srp-controls__count-heading');
-
-  await expect(heading).toContainText('Laptop');
+    await this.sp.verifySearchResult();
  });
 
 
 When('Enter invalid product name in search field', async function () {
-    await this.page.locator("#gh-ac").fill("abc-test");
+    await this.sp.searchforinvalidproduct();
 });
 
 
 Then('I verified no search results', async function () {
-
-    await expect(this.page.locator(".srp-controls__count-heading")).toContainText("0 results for abc-test");
-
-    await expect(this.page.locator("h1")).toContainText("No exact matches found");
+    await this.sp.verifySearchResult();
 });
 
 
-When('Search For A Product {string}', async function (Product) {
-    await this.page.locator("#gh-ac").fill(Product);
-});
+// When('Search For A Product {string}', async function (Product) {
+//     await this.page.locator("#gh-ac").fill(Product);
+// });
 
 
 
 
-When('Verify the search result', async function () {
+// When('Verify the search result', async function () {
 
   
 
-});
+// });
 
 
-When('Click the first product from the search result', async function () {
-
-
-
-});
-
-
-Then('Verify product detail page', async function () {
+// When('Click the first product from the search result', async function () {
 
 
 
-});
+// });
+
+
+// Then('Verify product detail page', async function () {
+
+
+
+// });

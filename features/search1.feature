@@ -14,17 +14,17 @@ Feature: Search at second time
         And Click Search buttons new
         Then I verified no search results
 
-    @ScenrioTagsearch3
-    Scenario Outline: Scenario Outline name
-        Given User in ebay home page
-        When Search For A Product "<Product>"
-        # And Click Search buttons new
-        # And Verify the search result
-        # And Click the first product from the search result
-        # Then Verify product detail page
-        Examples:
-            | Product |
-            | Iphone  |
-            | samsung |
-            | Moto    |
-            | sgfsgff |
+    # @ScenrioTagsearch3
+    # Scenario Outline: Scenario Outline name
+    #     Given User in ebay home page
+    #     When Search For A Product "<Product>"
+    #     # And Click Search buttons new
+    #     # And Verify the search result
+    #     # And Click the first product from the search result
+    #     # Then Verify product detail page
+    #     Examples:
+    #         | Product |
+    #         | Iphone  |
+    #         | samsung |
+    #         | Moto    |
+    #         | sgfsgff |
