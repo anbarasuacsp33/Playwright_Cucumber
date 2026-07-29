@@ -1,6 +1,6 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 const { expect } = require('chai');
-const { HomePage } = require("../../pages/homepage");
+const { HomePage } = require("../../pages/homepage").default;
 
 
 
@@ -21,4 +21,10 @@ Then('Home Page Header Emenets Verified', async function () {
 
 
 });
+
+When('Search For A Product {string}', async function (Product) {
+    this.hp = new HomePage(this.page);
+    await this.hp.enterproduct(Product)
+
+})
 

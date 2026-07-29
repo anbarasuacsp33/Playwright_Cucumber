@@ -10,9 +10,14 @@ class HomePage {
         await this.page.locator(this.emblm).highlight();
     }
 
+    async enterproduct(Product){
+        await this.page.locator("#gh-ac").fill(Product);
+
+    }
+
 
 
 
 }
 
-module.exports = { HomePage };
+export default { HomePage };

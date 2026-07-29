@@ -3,20 +3,24 @@ export default class search1{
 
     constructor(page){
         this.page = page;
+        this.inputfield = "#gh-ac"
+        this.validinputdata = "Laptop"
+        this.searchbutton = "#gh-search-btn"
+        this.appurl = "https://www.ebay.com"
 
     }
 
     async launchtheapplicationurl(){
-        await this.page.goto("https://www.ebay.com")
+        await this.page.goto(this.appurl)
     }
 
     async searchforproduct(){
-        await this.page.locator("#gh-ac").fill("Laptop");
+        await this.page.locator(this.inputfield).fill(this.validinputdata);
 
     }
 
     async clickSearchButton(){
-        await this.page.locator("#gh-search-btn").click();
+        await this.page.locator(this.searchbutton).click();
 
     }
 
