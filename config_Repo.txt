@@ -1,0 +1,15 @@
+Generate a allure report - npm run allure:generate
+Open a allure report - npm run allure:open
+Run the browser -- npx cucumber-js --tags "@ScenrioTagsearch4"
+Run all the comments - npm run test ---> Project config level
+Run the 2 Browser parellel execution in chrome --- npm run test:chromium
+Run the 2 Browser parellel execution in firefox --- npm run test:firefox
+
+| Script              | Command to Run                   | Description                                        |
+| ------------------- | -------------------------------- | -------------------------------------------------- |
+| `"test"`            | `npm test` **or** `npm run test` | Runs all Cucumber scenarios.                       |
+| `"test:chromium"`   | `npm run test:chromium`          | Runs tests in Chromium with 2 parallel workers.    |
+| `"test:firefox"`    | `npm run test:firefox`           | Runs tests in Firefox with 2 parallel workers.     |
+| `"test:all"`        | `npm run test:all`               | Runs Chromium and Firefox tests simultaneously.    |
+| `"allure:generate"` | `npm run allure:generate`        | Generates the Allure report from `allure-results`. |
+| `"allure:open"`     | `npm run allure:open`            | Opens the generated Allure report in your browser. |
